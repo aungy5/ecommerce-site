@@ -9,17 +9,21 @@ const linkStyle = {
     color: '#66ccff'
 }
 
+const pStyle = {
+    margin: '30px'
+}
+
 function About() {
     return(
         <div class="jumbotron">
-  <h1 class="display-4">About Me</h1>
+  <h1 class="display-4">About</h1>
   <img class="headshot" src="https://github.com/aungy5/react-portfolio/raw/main/public/images/headshot.jpeg" alt="headshot" style={imgStyle}></img>
-  <p class="lead">Dedicated Tech Professional with experience in web applications and production support. Recognized as a proactive, resourceful, and persistent problem-solver. Excellent communicator with effective client relationship-management skills. Graduate of Syracuse University with a BA in Economics. Will graduate from the University of Pennsylvania with a certificate in full stack web development in November of 2021.</p>
+  <p class="lead" style={pStyle}>Take your sports travel experience to the next level with SportTrips. You just tell us the event you would like to attend, and we'll do the rest! This takes the stress out of everything surrounding the event, and enables you to focus on enjoying the game.</p>
   <hr class="my-4"></hr>
   <p></p>
   <p class="lead">
   <button type="button" class="btn btn-dark"><a href="https://docs.google.com/document/d/e/2PACX-1vS1sb1ENhpV3Qd6q3jYfIkbGUKogv02R36VyANqCtuNFK4Xtb166H1fDrKK8HkDcrjkzKQXRZaTv7UU/pub
-           " style={linkStyle}>View Full Resume</a></button>
+           " style={linkStyle}>View Events</a></button>
   </p>
 </div>
     )
