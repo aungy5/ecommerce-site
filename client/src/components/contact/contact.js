@@ -77,10 +77,10 @@ function Contact() {
         <p style={padding}>Alternatively, please feel free to contact us directly thru either of the avenues below. </p>
           
           <h5>
-            Call us at <a href="tel:1800.800.800" style={linkStyle}>1-800-SPORT-TRIPS</a>
+            Call us at <a href="tel:1800.800.800" style={linkStyle}>1-800-DOG-DAYS</a>
           </h5>
           <h5>
-            Email us at <a href="mailto:aungvary5@gmail.com" style={linkStyle}>support@sporttrips.com</a>
+            Email us at <a href="mailto:aungvary5@gmail.com" style={linkStyle}>support@DogDays.com</a>
           </h5>
       </div>
     )

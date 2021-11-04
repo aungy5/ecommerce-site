@@ -30,13 +30,13 @@ function Navigation(props) {
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-    <NavLink to="/about"><a class="nav-link" style={navStyle}>About</a></NavLink>
-      <NavLink to="/portfolio"><a class="nav-link" style={navStyle}>Events</a></NavLink>
+    <NavLink to="/about"><a class="nav-link" style={navStyle}>Welcome</a></NavLink>
+      <NavLink to="/portfolio"><a class="nav-link" style={navStyle}>Dogs</a></NavLink>
 
       {/* <a class="nav-link" href="https://github.com/aungy5?tab=repositories">GitHub</a>
       <a class="nav-link" href="https://www.linkedin.com/in/aungy/">LinkedIn</a> */}
 
-      <NavLink to="/resume"><a class="nav-link" style={navStyle}>Deals</a></NavLink>
+      <NavLink to="/resume"><a class="nav-link" style={navStyle}>Posts</a></NavLink>
       <NavLink to="/contact"><a class="nav-link" style={navStyle}>Contact</a></NavLink>
 
     </div>
