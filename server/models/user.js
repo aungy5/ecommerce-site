@@ -3,6 +3,7 @@ const bcrypt = require("bcrypt")
 
 const Dog = require('./dog')
 const Comment = require('./comment')
+const Post = require('./post')
 
 const userSchema = new Schema(
     {
@@ -23,6 +24,7 @@ const userSchema = new Schema(
         },
         savedDogs: [Dog],
         commentsMade: [Comment],
+        postsMade: [Post],
     },
     {
         toJSON: {
@@ -45,12 +47,20 @@ userSchema.methods.isCorrectPassword = async function (password) {
     return bcrypt.compare(password, this.password)
 };
 
-// COUNT DOGS SAVED
+// COUNT DOGS SAVED => use this for leaderboard
 userSchema.virtual('dogCount').get(function () {
     return this.savedDogs.length;
 })
 
-// COUNT COMMENTS MADE
+// COUNT COMMENTS MADE => use this for leaderboard
+userSchema.virtual('commentCount').get(function () {
+    return this.commentsMade.length;
+})
+
+// COUNT POSTS MADE => use this for leaderboard
+userSchema.virtual('postCount').get(function () {
+    return this.postsMade.length;
+})
 
 const User = model('User', userSchema);
 

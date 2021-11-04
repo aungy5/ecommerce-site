@@ -13,9 +13,16 @@ const dogSchema = new Schema(
         breeder: {
             type: String,
         },
-        activities: {
-            type: Array,
+        image: {
+            type: String,
         },
+        description: {
+            type: String
+        },
+        dogId: {
+            type: String,
+            required: true
+        }
     }
 )
 
