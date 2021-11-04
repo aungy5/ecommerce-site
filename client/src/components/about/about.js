@@ -18,9 +18,9 @@ const pStyle = {
 function About() {
     return(
         <div class="jumbotron">
-  <h1 class="display-4">About</h1>
+  <h1 class="display-4">Welcome</h1>
   <img class="headshot" src="https://github.com/aungy5/ecommerce-site/raw/main/client/public/images/stadium.jpg" alt="stadium" style={imgStyle}></img>
-  <p class="lead" style={pStyle}>Take your Pet Ownership experience to the next level with DogDays, a fun site where you can link up with friends to share photos, treats, fun spots, and more!</p>
+  <p class="lead" style={pStyle}>Welcome to DogDays, we are so happy you are here! Whether you are looking to purchase a dog, need help on what food or toys to buy, or just want to look at some cute puppy pictures, we will bring it all to you!  </p>
   <hr class="my-4"></hr>
   <p></p>
   <p class="lead">
