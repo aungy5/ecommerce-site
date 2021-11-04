@@ -10,7 +10,7 @@ const typeDefs = gql`
     description: String
   }
 
-  type dogInput {
+  input dogInput {
     dogId: Int
     name: String
     type: String
@@ -29,6 +29,13 @@ const typeDefs = gql`
     commentsMade: [Comment]
     postCount: Int
     postsMade: [Post]
+  }
+
+  type Post {
+    _id: ID
+    postBody: String
+    createdAt: String
+    username: String
   }
 
   type Comment {
@@ -54,8 +61,9 @@ const typeDefs = gql`
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
+    updateUser(username: String!, email: String!, password: String!): User
     addComment(commentBody: String!): Comment
-    saveDog(inout: dogInput): User
+    saveDog(input: dogInput): User
     removeDog(dogId: Int!): User
   }
 `;

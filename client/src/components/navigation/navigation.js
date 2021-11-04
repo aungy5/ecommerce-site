@@ -24,7 +24,7 @@ const barStyle = {
 function Navigation(props) {
   return (
   <nav className="navbar navbar-expand-lg navbar-light bg-dark" style={barStyle}>
-  <a class="navbar-brand" style={navStyle} href="#"> <img src="https://github.com/aungy5/ecommerce-site/raw/main/client/public/images/logo1.png" style={imgStyle}></img> SportTrips </a>
+  <a class="navbar-brand" style={navStyle} href="#"> <img src="https://github.com/aungy5/ecommerce-site/raw/main/client/public/images/logo1.png" style={imgStyle}></img> DogDays </a>
   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>

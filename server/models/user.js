@@ -1,7 +1,7 @@
 const { Schema, model } = require("mongoose");
 const bcrypt = require("bcrypt")
 
-const Dog = require('./dog')
+const dogSchema = require('./dog')
 const Comment = require('./comment')
 const Post = require('./post')
 
@@ -22,9 +22,9 @@ const userSchema = new Schema(
             type: String, 
             required: true,
         },
-        savedDogs: [Dog],
-        commentsMade: [Comment],
-        postsMade: [Post],
+        savedDogs: [dogSchema],
+        //commentsMade: [Comment],
+        //postsMade: [Post],
     },
     {
         toJSON: {

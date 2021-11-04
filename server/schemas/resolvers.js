@@ -89,7 +89,7 @@ const resolvers = {
       if (context.user) {
         const updatedUser = await User.findByIdAndUpdate(
           { _id: context.user._id },
-          { $addToSet: {savedDogs: input } },
+          { $addToSet: { savedDogs: input } },
           { new: true }
         );
         return updatedUser;
