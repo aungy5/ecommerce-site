@@ -22,6 +22,10 @@ const dogSchema = new Schema(
         dogId: {
             type: String,
             required: true
+        },
+        akcLink: {
+            type: String,
+            required: true
         }
     }
 )
