@@ -1,5 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'
+import { Link } from 'react-router-dom';
 
 const imgStyle = {
     padding: '20px',
@@ -24,8 +25,11 @@ function About() {
   <hr class="my-4"></hr>
   <p></p>
   <p class="lead">
-  <button type="button" class="btn btn-dark"><a href="https://docs.google.com/document/d/e/2PACX-1vS1sb1ENhpV3Qd6q3jYfIkbGUKogv02R36VyANqCtuNFK4Xtb166H1fDrKK8HkDcrjkzKQXRZaTv7UU/pub
-           " style={linkStyle}>View Our Dogs!</a></button>
+  <button type="button" class="btn btn-dark">
+      <Link to="/dogs">
+      <a style={linkStyle}>View Our Dogs!</a>
+      </Link>
+      </button>
   </p>
 </div>
     )
