@@ -49,30 +49,30 @@ function Contact() {
     }
 
     return(
-        <div class="contact" style={padding}>
+        <div className="contact" style={padding}>
         <h1 style={titleStyle}>Contact Us</h1>
         <form>
-          <div class="form-group" style={padding}>
+          <div className="form-group" style={padding}>
             <label htmlFor="name">Your name:</label>
-            <input type="text" class="form-control" id="name" placeholder="Leave your name here..." defaultValue={name} onBlur={handleChange}/>
+            <input type="text" className="form-control" id="name" placeholder="Leave your name here..." defaultValue={name} onBlur={handleChange}/>
           </div>
-          <div class="form-group" style={padding}>
+          <div className="form-group" style={padding}>
             <label htmlFor="email">Your email:</label>
-            <textarea name="email" id="email" placeholder="Enter your email here..." class="form-control" defaultValue={email} onBlur={handleChange}></textarea>
+            <textarea name="email" id="email" placeholder="Enter your email here..." className="form-control" defaultValue={email} onBlur={handleChange}></textarea>
           </div>
-          <div class="form-group" style={padding}>
+          <div className="form-group" style={padding}>
             <label htmlFor="message">Your message:</label>
-            <textarea name="message" id="message" placeholder="Enter your message here..." class="form-control" defaultValue={message} onBlur={handleChange}></textarea>
+            <textarea name="message" id="message" placeholder="Enter your message here..." className="form-control" defaultValue={message} onBlur={handleChange}></textarea>
           </div>
 
           {errorMessage && (
             <div style={errorStyle}>
               <h3>Form Errors:</h3>
-              <p class="error">{errorMessage}</p>
+              <p className="error">{errorMessage}</p>
             </div>
           )}
 
-          <button class="btn btn-dark" style={linkStyle} onSubmit={handleSubmit}>Submit Message</button>
+          <button className="btn btn-dark" style={linkStyle} onSubmit={handleSubmit}>Submit Message</button>
         </form>
         <p style={padding}>Alternatively, please feel free to contact us directly thru either of the avenues below. </p>
           

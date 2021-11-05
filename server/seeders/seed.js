@@ -1,10 +1,13 @@
 const faker = require('faker')
 const db = require('../config/connection')
-const { User, Comment, Post } = require('../models')
+const { User, Comment, Post, Dog } = require('../models')
+const dogSeeds = require('./dogSeeds.json')
 
 db.once('open', async () => {
     await User.deleteMany({});
     await Comment.deleteMany({});
+    await Dog.deleteMany({});
+    await Dog.create(dogSeeds)
 
     const userData = [];
 
@@ -16,7 +19,7 @@ db.once('open', async () => {
         userData.push({ username, email, password })
     }
 
-    const createdUsers = await User.collection.insert(userData);
+    const createdUsers = await User.collection.insertMany(userData);
 
     let commentData = [];
     for (let i = 0; i < 25; i++) {

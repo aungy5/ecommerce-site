@@ -4,6 +4,7 @@ import Navigation from '../navigation/navigation'
 import About from '../about/about'
 import Contact from '../contact/contact'
 import './header.css'
+import Login from '../login/login';
 
 class Header extends Component {
     render() {
@@ -16,6 +17,7 @@ class Header extends Component {
                 <Route exact path="/" render={() => (<Redirect to="/about"/>)}/>
                 <Route path="/about" component={About}/>
                 <Route path="/contact" component={Contact}/>
+                <Route path="/login" component={Login}/>
             </div>
             </HashRouter>
         )

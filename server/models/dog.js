@@ -30,7 +30,7 @@ const dogSchema = new Schema(
     }
 )
 
-module.exports = dogSchema;
+//module.exports = dogSchema;
 
-//const Dog = model('Dog', dogSchema)
-//module.exports = Dog;
+const Dog = model('Dog', dogSchema)
+module.exports = Dog;
