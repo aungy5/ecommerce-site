@@ -1,9 +1,14 @@
 import './App.css';
 import Header from '../src/components/header/header'
 import Footer from '../src/components/footer/footer'
-import About from '../src/pages/about'
-import Login from '../src/pages/login'
-import Contact from '../src/pages/contact'
+import About from './pages/About'
+import Login from './pages/Login'
+import Contact from './pages/Contact'
+import Signup from './pages/Signup'
+import Dog from './pages/Dog'
+import Post from './pages/Post'
+import SinglePost from './pages/SinglePost'
+import singleDog from './pages/SingleDog'
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
@@ -54,6 +59,21 @@ function App() {
           <Route exact path="/about">
             <About />
           </Route>
+          <Route exact path="/signup">
+            <Signup />
+          </Route>
+          {/* <Route exact path="/dogs">
+            <Dog />
+          </Route> */}
+          <Route exact path="/posts">
+            <Post />
+          </Route>
+          <Route exact path="/posts/:postId">
+            <SinglePost />
+          </Route>
+          {/* <Route exact path="/dogs/:dogId">
+            <singleDog />
+          </Route> */}
           <Footer/>
           </div>
       </Router>

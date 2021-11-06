@@ -24,8 +24,9 @@ const userSchema = new Schema(
             minLength: 7
         },
         savedDogs: [Dog.schema],
-        commentsMade: [Comment.schema],
+        // commentsMade: [Comment.schema],
         postsMade: [Post.schema],
+        // commentsMade: [Post.comments.schema]
     },
     {
         toJSON: {
@@ -54,9 +55,9 @@ userSchema.virtual('dogCount').get(function () {
 })
 
 // COUNT COMMENTS MADE => use this for leaderboard
-userSchema.virtual('commentCount').get(function () {
-    return this.commentsMade.length;
-})
+// userSchema.virtual('commentCount').get(function () {
+//     return this.commentsMade.length;
+// })
 
 // COUNT POSTS MADE => use this for leaderboard
 userSchema.virtual('postCount').get(function () {

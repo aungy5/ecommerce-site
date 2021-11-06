@@ -1,15 +1,17 @@
 const faker = require('faker')
 const db = require('../config/connection')
-const { User, Comment, Post, Dog } = require('../models')
+const { User, Post, Dog } = require('../models')
 const dogSeeds = require('./dogSeeds.json')
 const userSeeds = require('./userSeeds.json')
+const postSeeds = require('./postSeeds.json')
 
 db.once('open', async () => {
     await User.deleteMany({});
-    await Comment.deleteMany({});
+    await Post.deleteMany({});
     await Dog.deleteMany({});
     await Dog.create(dogSeeds)
     await User.create(userSeeds)
+    await Post.create(postSeeds)
 
     // const userData = [];
 

@@ -29,7 +29,12 @@ function About() {
       <Link to="/dogs" style={linkStyle}>
       View Our Dogs!
       </Link>
-      </button>
+    </button>
+    <button type="button" className="btn btn-dark">
+      <Link to="/posts" style={linkStyle}>
+      View Our Blog!
+      </Link>
+    </button>
   </p>
 </div>
     )

@@ -35,15 +35,16 @@ const typeDefs = gql`
   type Post {
     _id: ID
     postBody: String
-    createdAt: String
     username: String
+    createdAt: String
+    comments: [Comment]!
   }
 
   type Comment {
     _id: ID
     commentBody: String
-    createdAt: String
     username: String
+    createdAt: String
   }
 
   type Auth {
@@ -55,17 +56,20 @@ const typeDefs = gql`
     me: User
     users: [User]
     user(username: String!): User
-    comments(username: String): [Comment]
-    comment(_id: ID!): Comment
+    posts(username: String): [Post]
+    post(postId: ID!): Post
   }
 
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
     updateUser(username: String!, email: String!, password: String!): User
-    addComment(commentBody: String!): Comment
+    addPost(postBody: String!): Post
+    addComment(postId: ID!, commentBody: String!): Post
     saveDog(input: dogInput): User
     removeDog(dogId: Int!): User
+    removePost(postId: ID!): Post
+    removeComment(postId: ID!, commentId: ID!): Post
   }
 `;
 

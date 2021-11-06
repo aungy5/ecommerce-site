@@ -19,10 +19,10 @@ const dogSchema = new Schema(
         description: {
             type: String
         },
-        dogId: {
-            type: String,
-            required: true
-        },
+        // dogId: {
+        //     type: String,
+        //     required: true
+        // },
         akcLink: {
             type: String,
             required: true

@@ -28,12 +28,12 @@ function Navigation(props) {
     if (Auth.loggedIn()) {
       return (
         <nav className="navbar navbar-expand-lg navbar-light bg-dark" style={barStyle}>
-        <a class="navbar-brand" style={navStyle} href="#"> <img src="https://github.com/aungy5/ecommerce-site/raw/main/client/public/images/whitepaw.png" style={imgStyle}></img> DogDays </a>
+        <a className="navbar-brand" style={navStyle} href="#"> <img src="https://github.com/aungy5/ecommerce-site/raw/main/client/public/images/whitepaw.png" style={imgStyle}></img> DogDays </a>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
+        <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div className="navbar-nav">
           <NavLink to="/about" style={navStyle} className="nav-link">Welcome</NavLink>
             <NavLink to="/dogs" style={navStyle} className="nav-link">Dogs</NavLink>
             <NavLink to="/posts" style={navStyle} className="nav-link">Posts</NavLink>
