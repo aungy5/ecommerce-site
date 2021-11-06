@@ -1,27 +1,18 @@
-import React, {Component} from 'react';
-import {Route, Redirect, HashRouter} from 'react-router-dom';
+import React from 'react';
 import Navigation from '../navigation/navigation'
-import About from '../about/about'
-import Contact from '../contact/contact'
 import './header.css'
-import Login from '../login/login';
+import Auth from '../../utils/auth'
 
-class Header extends Component {
-    render() {
-        return(
-            <HashRouter>
-                <div className="nav">
-                    <Navigation/>
-                </div>
-            <div className="routes">
-                <Route exact path="/" render={() => (<Redirect to="/about"/>)}/>
-                <Route path="/about" component={About}/>
-                <Route path="/contact" component={Contact}/>
-                <Route path="/login" component={Login}/>
-            </div>
-            </HashRouter>
-        )
-    }
+const Header = () => {
+    const logout = (event) => {
+        event.preventDefault();
+        Auth.logout();
+    };
+    return (
+        <div className="nav">
+            <Navigation/>
+        </div>
+    )
 }
 
 export default Header;

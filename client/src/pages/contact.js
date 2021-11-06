@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { validateEmail } from '../../utils/validateEmail'
+import { validateEmail } from '../utils/validateEmail'
 
 const titleStyle = {
   backgroundColor: '#66ccff',

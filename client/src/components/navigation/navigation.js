@@ -38,7 +38,7 @@ function Navigation(props) {
             <NavLink to="/dogs" style={navStyle} className="nav-link">Dogs</NavLink>
             <NavLink to="/posts" style={navStyle} className="nav-link">Posts</NavLink>
             <NavLink to="/contact" style={navStyle} className="nav-link">Contact</NavLink>
-            <a href="/" onClick={() => Auth.logout()} style={navStyle}>
+            <a href="/" className="nav-link" onClick={() => Auth.logout()} style={navStyle}>
               Logout
             </a>
       

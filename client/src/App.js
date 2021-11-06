@@ -1,6 +1,10 @@
 import './App.css';
 import Header from '../src/components/header/header'
 import Footer from '../src/components/footer/footer'
+import About from '../src/pages/about'
+import Login from '../src/pages/login'
+import Contact from '../src/pages/contact'
+
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import {
@@ -38,6 +42,18 @@ function App() {
         <Router>
           <div>
           <Header/>
+          <Route exact path="/">
+            <About />
+          </Route>
+          <Route exact path="/login">
+            <Login />
+          </Route>
+          <Route exact path="/contact">
+            <Contact />
+          </Route>
+          <Route exact path="/about">
+            <About />
+          </Route>
           <Footer/>
           </div>
       </Router>
