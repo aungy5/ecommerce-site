@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Post } = require('../models');
+const { User, Post, Dog } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -24,6 +24,15 @@ const resolvers = {
     // GET SINGLE POST
     post: async (parent, { postId }) => {
       return Post.findOne({ _id: postId });
+    },
+    // GET ALL DOGS
+    dogs: async (parent, { username }) => {
+      const params = username ? { username } : {};
+      return Dog.find(params).sort({ createdAt: -1 });
+    },
+    // GET SINGLE DOG
+    dog: async (parent, { postId }) => {
+      return Dog.findOne({ _id: dogId });
     },
   },
   Mutation: {

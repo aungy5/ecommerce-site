@@ -6,6 +6,15 @@ import { ADD_COMMENT } from '../../utils/mutations';
 
 import Auth from '../../utils/auth';
 
+const formStyle = {
+  justifyContent: 'Center'
+}
+
+const titleStyle = {
+  backgroundColor: '#66ccff',
+  padding: '20px'
+}
+
 const CommentForm = ({ postId }) => {
   const [commentBody, setCommentText] = useState('');
   const [characterCount, setCharacterCount] = useState(0);
@@ -40,8 +49,8 @@ const CommentForm = ({ postId }) => {
   };
 
   return (
-    <div>
-      <h4>What are your posts on this post?</h4>
+    <div className="p-3 bg-dark text-light" style={formStyle}>
+      <h4>What do YOU have to say about this post?</h4>
 
       {Auth.loggedIn() ? (
         <>
@@ -54,22 +63,22 @@ const CommentForm = ({ postId }) => {
             {error && <span className="ml-2">{error.message}</span>}
           </p>
           <form
-            className="flex-row justify-center justify-space-between-md align-center"
+            className="flex-row justify-center align-center"
             onSubmit={handleFormSubmit}
           >
-            <div className="col-12 col-lg-9">
+            <div className="col-12 col-lg-12">
               <textarea
                 name="commentBody"
                 placeholder="Add your comment..."
                 value={commentBody}
-                className="form-input w-100"
+                className="form-input w-50"
                 style={{ lineHeight: '1.5', resize: 'vertical' }}
                 onChange={handleChange}
               ></textarea>
             </div>
 
-            <div className="col-12 col-lg-3">
-              <button className="btn btn-primary btn-block py-3" type="submit">
+            <div className="col-12 col-lg-12">
+              <button className="btn btn-light btn-block py-3" type="submit">
                 Add Comment
               </button>
             </div>

@@ -62,9 +62,9 @@ function App() {
           <Route exact path="/signup">
             <Signup />
           </Route>
-          {/* <Route exact path="/dogs">
+          <Route exact path="/dogs">
             <Dog />
-          </Route> */}
+          </Route>
           <Route exact path="/posts">
             <Post />
           </Route>

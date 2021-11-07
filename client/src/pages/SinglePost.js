@@ -9,6 +9,23 @@ import CommentForm from '../components/commentForm/commentForm';
 
 import { QUERY_SINGLE_POST } from '../utils/queries';
 
+const titleStyle = {
+  backgroundColor: '#66ccff',
+  padding: '20px'
+}
+
+const quoteStyle = {
+  fontSize: '1.5rem',
+  fontStyle: 'italic',
+  border: '2px dotted #1a1a1a',
+  lineHeight: '1.5',
+}
+
+const commentStyle = {
+  color: 'white',
+  padding: '20px'
+}
+
 const SinglePost = () => {
   // Use `useParams()` to retrieve value of the route parameter `:profileId`
   const { postId } = useParams();
@@ -23,36 +40,56 @@ const SinglePost = () => {
   if (loading) {
     return <div>Loading...</div>;
   }
+
   return (
-    <div className="my-3">
-      <h3 className="">
-        {post.username} <br />
-        <span style={{ fontSize: '1rem' }}>
-          had this post on {post.createdAt}
-        </span>
-      </h3>
-      <div className="bg-light py-4">
-        <blockquote
-          className="p-4"
-          style={{
-            fontSize: '1.5rem',
-            fontStyle: 'italic',
-            border: '2px dotted #1a1a1a',
-            lineHeight: '1.5',
-          }}
-        >
+    <React.Fragment>
+        <h3 class="singlePost" style={titleStyle}>{post.username} posted on {post.createdAt}</h3>
+        <blockquote style={quoteStyle}>
           {post.postBody}
         </blockquote>
-      </div>
 
-      <div className="my-5">
-        <CommentList comments={post.comments} />
-      </div>
-      <div className="m-3 p-4" style={{ border: '1px dotted #1a1a1a' }}>
+        <div className="bg-dark" style={commentStyle}>
+       <CommentList comments={post.comments} />
+        </div>
+
+        <div className="m-3 p-4" style={{ border: '1px dotted #1a1a1a' }}>
         <CommentForm postId={post._id} />
-      </div>
-    </div>
-  );
+        </div>
+
+      </React.Fragment>
+  )
+  
+  
+  // return (
+  //   <div className="my-3">
+  //     <h3 className="">
+  //       {post.username} <br />
+  //       <span style={{ fontSize: '1rem' }}>
+  //         had this post on {post.createdAt}
+  //       </span>
+  //     </h3>
+  //     <div className="bg-light py-4">
+  //       <blockquote
+  //         className="p-4"
+  //         style={{
+  //           fontSize: '1.5rem',
+  //           fontStyle: 'italic',
+  //           border: '2px dotted #1a1a1a',
+  //           lineHeight: '1.5',
+  //         }}
+  //       >
+  //         {post.postBody}
+  //       </blockquote>
+  //     </div>
+
+  //     <div className="my-5">
+  //       <CommentList comments={post.comments} />
+  //     </div>
+  //     <div className="m-3 p-4" style={{ border: '1px dotted #1a1a1a' }}>
+  //       <CommentForm postId={post._id} />
+  //     </div>
+  //   </div>
+  // );
 };
 
 export default SinglePost;

@@ -2,6 +2,16 @@ const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
   type Dog {
+    _id: ID
+    name: String
+    type: String
+    breeder: String
+    image: String,
+    description: String,
+    akcLink: String
+  }
+
+   input dogInput {
     dogId: Int
     name: String
     type: String
@@ -10,14 +20,6 @@ const typeDefs = gql`
     description: String
   }
 
-  input dogInput {
-    dogId: Int
-    name: String
-    type: String
-    breeder: String
-    image: String,
-    description: String
-  }
 
   type User {
     _id: ID
@@ -58,6 +60,8 @@ const typeDefs = gql`
     user(username: String!): User
     posts(username: String): [Post]
     post(postId: ID!): Post
+    dogs(username: String): [Dog]
+    dog(dogId: String!): Dog
   }
 
   type Mutation {
