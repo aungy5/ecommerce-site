@@ -14,6 +14,12 @@ const titleStyle = {
   padding: '20px'
 }
 
+const dogStyle = {
+  padding: "20px",
+  //backgroundColor: 'black',
+  justifyContent: 'Center'
+};
+
 const quoteStyle = {
   fontSize: '1.5rem',
   fontStyle: 'italic',
@@ -42,22 +48,53 @@ const SinglePost = () => {
   }
 
   return (
-    <React.Fragment>
-        <h3 class="singlePost" style={titleStyle}>{post.username} posted on {post.createdAt}</h3>
-        <blockquote style={quoteStyle}>
-          {post.postBody}
-        </blockquote>
+    <section className="post">
+    <h1 style={titleStyle}>Post Discussion</h1>
+          <div className="row bg-dark" style={dogStyle}>
+          <div className="col-sm-8">
+            <div class="card text-center">
+              <div class="card-header">{post.createdAt}</div>
+              <div class="card-body">
+                <h5 class="card-title">Posted by {post.username}</h5>
+                {/* <img src={dog.image} style={imgStyle}></img> */}
+                <p class="card-text">
+                  {post.postBody}
+                  
+                </p>
+                {/* <a href={dog.akcLink} class="btn btn-dark"></a> */}
+              </div>
+              <div class="card-footer text-muted">XXX</div>
+            </div>
+          </div>
+            <div className="bg-dark" style={commentStyle}>
+              <CommentList comments={post.comments} />
+            </div>
 
-        <div className="bg-dark" style={commentStyle}>
-       <CommentList comments={post.comments} />
+            <div className="m-3 p-4" style={{ border: '1px dotted #1a1a1a' }}>
+              <CommentForm postId={post._id} />
+            </div>
+
         </div>
-
-        <div className="m-3 p-4" style={{ border: '1px dotted #1a1a1a' }}>
-        <CommentForm postId={post._id} />
-        </div>
-
-      </React.Fragment>
+      </section>
   )
+
+  // return (
+  //   <React.Fragment>
+  //       <h3 class="singlePost" style={titleStyle}>{post.username} posted on {post.createdAt}</h3>
+  //       <blockquote style={quoteStyle}>
+  //         {post.postBody}
+  //       </blockquote>
+
+  //       <div className="bg-dark" style={commentStyle}>
+  //      <CommentList comments={post.comments} />
+  //       </div>
+
+  //       <div className="m-3 p-4" style={{ border: '1px dotted #1a1a1a' }}>
+  //       <CommentForm postId={post._id} />
+  //       </div>
+
+  //     </React.Fragment>
+  // )
   
   
   // return (

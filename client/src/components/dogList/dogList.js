@@ -12,7 +12,7 @@ const titleStyle = {
 
 const dogStyle = {
   padding: "20px",
-  backgroundColor: 'black',
+  backgroundColor: '#212429',
   justifyContent: 'Center'
 };
 
@@ -35,7 +35,7 @@ const dogList = ({ dogs }) => {
           <div className="row" style={dogStyle}>
           <div className="col-sm-8">
             <div class="card text-center">
-              <div class="card-header">{dog.type}</div>
+              <div class="card-header" style={titleStyle}>{dog.type}</div>
               <div class="card-body">
                 <h5 class="card-title">{dog.name}</h5>
                 <img src={dog.image} style={imgStyle}></img>
@@ -47,7 +47,7 @@ const dogList = ({ dogs }) => {
                   Learn More About This Breed
                 </a>
               </div>
-              <div class="card-footer text-muted">2 days ago</div>
+              {/* <div class="card-footer text-muted">XXX</div> */}
             </div>
           </div>
         </div>

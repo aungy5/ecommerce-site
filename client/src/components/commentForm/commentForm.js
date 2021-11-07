@@ -12,7 +12,8 @@ const formStyle = {
 
 const titleStyle = {
   backgroundColor: '#66ccff',
-  padding: '20px'
+  padding: '20px',
+  color: 'black'
 }
 
 const CommentForm = ({ postId }) => {
@@ -50,7 +51,8 @@ const CommentForm = ({ postId }) => {
 
   return (
     <div className="p-3 bg-dark text-light" style={formStyle}>
-      <h4>What do YOU have to say about this post?</h4>
+
+      <h4 style={titleStyle}>What do YOU have to say about this Post?</h4>
 
       {Auth.loggedIn() ? (
         <>

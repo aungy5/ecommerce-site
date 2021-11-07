@@ -16,6 +16,10 @@ const pStyle = {
     margin: '30px'
 }
 
+const divStyle = {
+    paddingBottom: '25px'
+}
+
 function About() {
     return(
         <div className="jumbotron">
@@ -24,18 +28,22 @@ function About() {
   <p className="lead" style={pStyle}>Welcome to DogDays, we are so happy you are here! Whether you are looking to purchase a dog, need help with what food or toys to buy, or just want to look at some cute puppy pictures, we have a community of dog lovers eager to help you out! Please be sure to check out the Posts section to see what our users are saying about the dogs we have helped them purchase, as this information can be very helpful in your search for a furry companion! Click the button below to view our current selection of available dogs. </p>
   <hr className="my-4"></hr>
   <p></p>
-  <p className="lead">
+  {/* <p className="lead"> */}
+  <div className="buttons" style={divStyle}>
   <button type="button" className="btn btn-dark">
       <Link to="/dogs" style={linkStyle}>
       View Our Dogs!
       </Link>
     </button>
+    <br></br>
+    <br></br>
     <button type="button" className="btn btn-dark">
       <Link to="/posts" style={linkStyle}>
       View Our Blog!
       </Link>
     </button>
-  </p>
+    </div>
+  {/* </p> */}
 </div>
     )
 }

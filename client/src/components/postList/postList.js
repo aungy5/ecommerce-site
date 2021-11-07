@@ -14,6 +14,12 @@ const postStyle = {
   padding: '20px'
 }
 
+const dogStyle = {
+  padding: "20px",
+  backgroundColor: '#212429',
+  justifyContent: 'Center'
+};
+
 const postList = ({
   posts,
   title,
@@ -28,19 +34,25 @@ const postList = ({
     <section class="posts">
       <h1 style={titleStyle}>User Posts</h1>
       {posts.map((post) => (
-        <React.Fragment>
-          <card class="postCard" style={postStyle}>
-        <h2 class="title" style={titleStyle}>{title}</h2>
-        <h3>{post.username}</h3>
-        <h4>Posted on {post.createdAt}</h4>
-        <p>{post.postBody}</p>
-        <button type="button" className="btn btn-dark">
-        <Link to={`/posts/${post._id}`} style={linkStyle}>
-        Comment on this Post!
-        </Link>
-        </button>
-        </card>
-        </React.Fragment>
+        <div className="row bg-dark" style={dogStyle}>
+        <div className="col-sm-8">
+          <div class="card text-center">
+            <div class="card-header">{post.createdAt}</div>
+            <div class="card-body">
+              <h5 class="card-title">Posted by {post.username}</h5>
+              {/* <img src={dog.image} style={imgStyle}></img> */}
+              <p class="card-text">
+                {post.postBody}
+                
+              </p>
+              <a href={`/posts/${post._id}`} class="btn btn-dark">
+                  Comment on this Post!
+              </a>
+            </div>
+            {/* <div class="card-footer text-muted">XXX</div> */}
+          </div>
+        </div>
+        </div>
       ))}
     </section>
   )
