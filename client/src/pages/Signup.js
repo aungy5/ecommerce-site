@@ -6,6 +6,25 @@ import { ADD_USER } from '../utils/mutations';
 
 import Auth from '../utils/auth'
 
+const formStyle = {
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center'
+}
+
+const linkStyle = {
+  color: '#66ccff'
+}
+
+const titleStyle = {
+  backgroundColor: "#66ccff",
+  padding: "20px",
+}
+
+const divStyle = {
+  padding: '30px'
+}
+
 const Signup = () => {
     const [formState, setFormState] = useState({
       username: '',
@@ -40,9 +59,9 @@ const Signup = () => {
   
     return (
       <main className="flex-row justify-center mb-4">
-        <div className="col-12 col-lg-10">
+        <div className="col-12" style={divStyle}>
           <div className="card">
-            <h4 className="card-header bg-dark text-light p-2">Sign Up</h4>
+            <h4 className="card-header" style={titleStyle}>Sign Up</h4>
             <div className="card-body">
               {data ? (
                 <p>
@@ -50,7 +69,7 @@ const Signup = () => {
                   <Link to="/">back to the homepage.</Link>
                 </p>
               ) : (
-                <form onSubmit={handleFormSubmit}>
+                <form onSubmit={handleFormSubmit} style={formStyle}>
                   <input
                     className="form-input"
                     placeholder="Your username"
@@ -76,8 +95,9 @@ const Signup = () => {
                     onChange={handleChange}
                   />
                   <button
-                    className="btn btn-block btn-primary"
-                    style={{ cursor: 'pointer' }}
+                    className="btn btn-dark"
+                    // style={{ cursor: 'pointer' }}
+                    style={linkStyle}
                     type="submit"
                   >
                     Submit

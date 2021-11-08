@@ -14,13 +14,20 @@ const linkStyle = {
     color: '#66ccff',
   }
   
-  const padding = {
-    padding: '10px'
-  }
-  
   const errorStyle = {
     backgroundColor: 'black',
     color: '#66ccff'
+  }
+
+  const formStyle = {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    padding: '20px'
+  }
+
+  const padding = {
+    padding: '10px'
   }
 
 const Login = (props) => {
@@ -59,7 +66,7 @@ const Login = (props) => {
   };
 
   return (
-    <div className="login" style={padding}>
+    <div className="login">
             <h1 style={titleStyle}>Login</h1>
             <br/>
             <Link to="/signup">
@@ -72,9 +79,10 @@ const Login = (props) => {
                 <Link to="/">back to the homepage.</Link>
               </p>
             ) : (
-              <form onSubmit={handleSubmit}>
+              <form onSubmit={handleSubmit} style={formStyle}>
                 <input
                   className="form-input"
+                  style={padding}
                   placeholder="Your email"
                   name="email"
                   type="email"
@@ -84,6 +92,7 @@ const Login = (props) => {
                 <input
                   className="form-input"
                   placeholder="******"
+                  style={padding}
                   name="password"
                   type="password"
                   value={formState.password}
