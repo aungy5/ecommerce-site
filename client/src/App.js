@@ -1,7 +1,7 @@
 import './App.css';
 import Header from '../src/components/header/header'
 import Footer from '../src/components/footer/footer'
-import About from './pages/About'
+import About from './pages/about/About'
 import Login from './pages/Login'
 import Contact from './pages/Contact'
 import Signup from './pages/Signup'
@@ -9,6 +9,7 @@ import Dog from './pages/Dog'
 import Post from './pages/Post'
 import SinglePost from './pages/SinglePost'
 import singleDog from './pages/SingleDog'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 

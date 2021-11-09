@@ -7,8 +7,27 @@ import { QUERY_POSTS, QUERY_ME } from '../../utils/queries';
 
 import Auth from '../../utils/auth';
 
+const hStyle = {
+  display: 'flex',
+  flexDirection: 'row',
+  justifyContent: 'Center',
+  padding: '10px',
+  backgroundColor: '#66ccff'
+}
+
+const pStyle = {
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'Center',
+  padding: '10px'
+}
+
+const linkStyle = {
+  color: '#66ccff'
+}
+
 const PostForm = () => {
-  const [postText, setPostText] = useState('');
+  const [postBody, setPostBody] = useState('');
 
   const [characterCount, setCharacterCount] = useState(0);
 
@@ -26,11 +45,11 @@ const PostForm = () => {
       }
 
       // update me object's cache
-      const { me } = cache.readQuery({ query: QUERY_ME });
-      cache.writeQuery({
-        query: QUERY_ME,
-        data: { me: { ...me, posts: [...me.posts, addPost] } },
-      });
+      // const { me } = cache.readQuery({ query: QUERY_ME });
+      // cache.writeQuery({
+      //   query: QUERY_ME,
+      //   data: { me: { ...me, posts: [...me.posts, addPost] } },
+      // });
     },
   });
 
@@ -40,12 +59,12 @@ const PostForm = () => {
     try {
       const { data } = await addPost({
         variables: {
-          postText,
-          postAuthor: Auth.getProfile().data.username,
+          postBody,
+          username: Auth.getProfile().data.username,
         },
       });
 
-      setPostText('');
+      setPostBody('');
     } catch (err) {
       console.error(err);
     }
@@ -54,15 +73,17 @@ const PostForm = () => {
   const handleChange = (event) => {
     const { name, value } = event.target;
 
-    if (name === 'postText' && value.length <= 280) {
-      setPostText(value);
+    if (name === 'postBody' && value.length <= 280) {
+      setPostBody(value);
       setCharacterCount(value.length);
     }
   };
 
   return (
     <div>
-      <h3>What's on your techy mind?</h3>
+      <div className="form" style={hStyle}>
+      <h3>What's on your mind?</h3>
+      </div>
 
       {Auth.loggedIn() ? (
         <>
@@ -74,22 +95,23 @@ const PostForm = () => {
             Character Count: {characterCount}/280
           </p>
           <form
-            className="flex-row justify-center justify-space-between-md align-center"
+            className="form"
             onSubmit={handleFormSubmit}
+            style={pStyle}
           >
-            <div className="col-12 col-lg-9">
+            <div className="col-12">
               <textarea
-                name="postText"
-                placeholder="Here's a new post..."
-                value={postText}
+                name="postBody"
+                placeholder="Type your post here..."
+                value={postBody}
                 className="form-input w-100"
                 style={{ lineHeight: '1.5', resize: 'vertical' }}
                 onChange={handleChange}
               ></textarea>
             </div>
 
-            <div className="col-12 col-lg-3">
-              <button className="btn btn-primary btn-block py-3" type="submit">
+            <div className="col-12">
+              <button className="btn btn-dark" type="submit" style={linkStyle}>
                 Add Post
               </button>
             </div>
@@ -101,10 +123,12 @@ const PostForm = () => {
           </form>
         </>
       ) : (
+        <div className="form" style={pStyle}>
         <p>
           You need to be logged in to share your posts. Please{' '}
           <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
         </p>
+        </div>
       )}
     </div>
   );

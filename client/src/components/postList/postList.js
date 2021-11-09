@@ -31,21 +31,21 @@ const postList = ({
   }
 
   return (
-    <section class="posts">
+    <section className="posts">
       <h1 style={titleStyle}>User Posts</h1>
       {posts.map((post) => (
-        <div className="row bg-dark" style={dogStyle}>
+        <div key={post._id} className="row bg-dark" style={dogStyle}>
         <div className="col-sm-8">
-          <div class="card text-center">
-            <div class="card-header">{post.createdAt}</div>
-            <div class="card-body">
-              <h5 class="card-title">Posted by {post.username}</h5>
+          <div className="card text-center">
+            <div className="card-header">{post.createdAt}</div>
+            <div className="card-body">
+              <h5 className="card-title">Posted by {post.username}</h5>
               {/* <img src={dog.image} style={imgStyle}></img> */}
-              <p class="card-text">
+              <p className="card-text">
                 {post.postBody}
                 
               </p>
-              <a href={`/posts/${post._id}`} class="btn btn-dark">
+              <a href={`/posts/${post._id}`} className="btn btn-dark">
                   Comment on this Post!
               </a>
             </div>
