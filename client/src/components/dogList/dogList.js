@@ -34,18 +34,18 @@ const dogList = ({ dogs }) => {
 
         <h1 style={titleStyle}>Our Dogs</h1>
         {dogs.map((dog) => (
-          <div className="row" style={dogStyle}>
+          <div className="row" key={dog._id} style={dogStyle}>
           <div className="col-sm-8">
             <div className="card text-center">
               <div className="card-header" style={titleStyle}>{dog.type}</div>
               <div className="card-body">
                 <h5 className="card-title">{dog.name}</h5>
                 <img className="img1" src={dog.image}></img>
-                <p class="card-text">
+                <p className="card-text">
                   {dog.description}
                   
                 </p>
-                <a href={dog.akcLink} class="btn btn-dark" style={linkStyle}>
+                <a href={dog.akcLink} className="btn btn-dark" style={linkStyle}>
                   Learn More About This Breed
                 </a>
               </div>
