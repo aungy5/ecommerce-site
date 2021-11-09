@@ -53,17 +53,17 @@ const SinglePost = () => {
           <div className="row bg-dark" style={dogStyle}>
           <div className="col-sm-8">
             <div class="card text-center">
-              <div class="card-header">{post.createdAt}</div>
+              <div class="card-header" style={titleStyle}>{post.createdAt}</div>
               <div class="card-body">
-                <h5 class="card-title">Posted by {post.username}</h5>
+                <h5 class="card-title">{post.postBody}</h5>
                 {/* <img src={dog.image} style={imgStyle}></img> */}
                 <p class="card-text">
-                  {post.postBody}
+                  -Posted by {post.username}
                   
                 </p>
                 {/* <a href={dog.akcLink} class="btn btn-dark"></a> */}
               </div>
-              <div class="card-footer text-muted">XXX</div>
+              {/* <div class="card-footer text-muted">XXX</div> */}
             </div>
           </div>
             <div className="bg-dark" style={commentStyle}>

@@ -16,6 +16,10 @@ const titleStyle = {
   color: 'black'
 }
 
+const linkStyle = {
+  color: '#66ccff'
+}
+
 const CommentForm = ({ postId }) => {
   const [commentBody, setCommentText] = useState('');
   const [characterCount, setCharacterCount] = useState(0);
@@ -89,7 +93,7 @@ const CommentForm = ({ postId }) => {
       ) : (
         <p>
           You need to be logged in to share your posts. Please{' '}
-          <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
+          <Link to="/login" style={linkStyle}>login</Link> or <Link to="/signup" style={linkStyle}>signup.</Link>
         </p>
       )}
     </div>

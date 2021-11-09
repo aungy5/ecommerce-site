@@ -4,12 +4,6 @@ import { Link } from 'react-router-dom';
 //import './about.css'
 import '../../App.css'
 
-const imgStyle = {
-    padding: '20px',
-    height: '500px',
-    width: '900px'
-}
-
 const linkStyle = {
     color: '#66ccff'
 }
@@ -22,11 +16,10 @@ const divStyle = {
     paddingBottom: '25px'
 }
 
-const imgSmall = {
-    height: '100px',
-    width: '100px'
-}
-
+const titleStyle = {
+    backgroundColor: "#66ccff",
+    padding: "20px",
+};
 
 const About = () => {
     
@@ -40,7 +33,7 @@ const About = () => {
     return (
 
     <div className="jumbotron">
-  <h1 className="display-4">Welcome</h1>
+  <h1 className="display-4" style={titleStyle}>Welcome</h1>
 
   <img className="img1" id="scaledImg" src="https://github.com/aungy5/ecommerce-site/raw/main/client/public/images/running dogs.jpeg" alt="dogsRunning"></img> 
   

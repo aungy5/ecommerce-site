@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import '../../App.css'
+
 const linkStyle = {
   color: "#66ccff",
 };
@@ -34,16 +36,16 @@ const dogList = ({ dogs }) => {
         {dogs.map((dog) => (
           <div className="row" style={dogStyle}>
           <div className="col-sm-8">
-            <div class="card text-center">
-              <div class="card-header" style={titleStyle}>{dog.type}</div>
-              <div class="card-body">
-                <h5 class="card-title">{dog.name}</h5>
-                <img src={dog.image} style={imgStyle}></img>
+            <div className="card text-center">
+              <div className="card-header" style={titleStyle}>{dog.type}</div>
+              <div className="card-body">
+                <h5 className="card-title">{dog.name}</h5>
+                <img className="img1" src={dog.image}></img>
                 <p class="card-text">
                   {dog.description}
                   
                 </p>
-                <a href={dog.akcLink} class="btn btn-dark">
+                <a href={dog.akcLink} class="btn btn-dark" style={linkStyle}>
                   Learn More About This Breed
                 </a>
               </div>
